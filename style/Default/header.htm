@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+
+<head>
+<meta content="text/html; charset=windows-1256" http-equiv="Content-Type" />
+<meta content="ar-sa" http-equiv="Content-Language" />
+<IF Name="{Current} eq index">
+<title>{settings.sitetitle}</title>
+<ELSE>
+<title>{PageTitle} - {settings.sitetitle}</title>
+</IF>
+<link href="style/Default/style.css" rel="stylesheet" type="text/css" />
+<IF Name="{settings.SEO1}">
+    <meta name="keywords" content="{lsn.Meta2}" />
+<ELSE>
+    <IF Name="{settings.Meta2}">
+    <meta name="keywords" content="{settings.Meta2}" />
+    </IF>
+</IF>
+<IF Name="{settings.SEO1}">
+    <meta name="description" content="درس {lsn.lesstitle} في مكتبة {settings.sitetitle}" />
+<ELSE>
+    <IF Name="{settings.Meta1}">
+    <meta name="description" content="{settings.Meta1}" />
+    </IF>
+</IF>
+<IF Name="{settings.Show_RSS}">
+<link rel="alternate" type="application/rss+xml" title="خلاصة RSS لـ {settings.sitetitle}" href="({settings.SrchLink}?rss.xml:rss.php)" />
+</IF>
+<link rel="search" type="application/opensearchdescription+xml" href="searchprovider.php" title="{settings.sitetitle}" />
+<IF Name="{showlsn}">
+<script type="text/javascript" src="./includes/jscript/jquery.js"></script>
+<script type="text/javascript" src="./includes/jscript/jquery.rating.js"></script>
+<script type="text/javascript">
+function small(Url)
+{
+    var f=window.open (Url, "SaphpWindow", "toolbar=No, location=No, directories=no,status=no, menubar=no, scrollbars=yes, resizable=No,width=400,height=300,left=150,top=100");
+}
+</script>
+</IF>
+<IF Name="{Current} eq tell">
+<script type="text/javascript">
+function CheckField(formobj)
+{
+var fieldRequired = Array("NameYou", "NameFrind", "MailYou","MailFrind","MSG");
+var fieldDescription = Array("اسمك", "اسم صديقك", "بريدك الإلكتروني","بريد صديقك","الرسالة");
+var alertMsg = "الرجاء اكمال الحقول التالية:\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+</script>
+</IF>
+<script type="text/javascript">
+<IF Name="{Current} eq contact">
+function CheckField(formobj)
+{
+var fieldRequired = Array("Name", "Email", "Subject","Msg");
+var fieldDescription = Array("اسمك", "بريدك الإلكتروني","عنوان الرسالة","الرسالة");
+var alertMsg = "الرجاء اكمال الحقول التالية:\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+</IF>
+function GoToCategory(CategoryList) {
+    newPage = CategoryList.options[CategoryList.selectedIndex].value
+    if (newPage != "") { window.location.href = newPage }
+}
+</script>
+</head>
+
+<body>
+
+<div style="text-align: center;background:#F4F7FB;padding-top:5px">
+    <img alt="" height="70" src="style/Default/images/logo.png" width="510" />
+    <br />
+</div>
+<div id="tabs1">
+    <ul>
+      <li <IF Name="{Current} eq index">id="current"</IF>><a href="{settings.SiteLink}"><span>الرئيسية</span></a></li>
+      <li <IF Name="{Current} eq stats">id="current"</IF>><a href="({settings.SrchLink}?statistics.html:misc.php?action=stat)"><span>الإحصائيات</span></a></li>
+      <li <IF Name="{Current} eq search">id="current"</IF>><a href="({settings.SrchLink}?search.html:search.php)"><span>البحث</span></a></li>
+      <li <IF Name="{Current} eq lastlsn">id="current"</IF>><a href="({settings.SrchLink}?lastlsn.html:search.php?action=lastlsn)"><span>جديد الدروس</span></a></li>
+      <li <IF Name="{Current} eq tell">id="current"</IF>><a href="({settings.SrchLink}?tellfriend.html:misc.php?action=tell)"><span>أخبر صديقك</span></a></li>
+      <li <IF Name="{Current} eq contact">id="current"</IF>><a href="({settings.SrchLink}?contactus.html:misc.php?action=contact)"><span>اتصل بنا</span></a></li>
+    </ul>
+</div>
+<div style="float:right;width: 94%;text-align: right;background:#ffffff;border:1px solid #BCD2E6;margin-right: 2%; margin-left: 3%; padding-right: 6px;">
+    <div style="width: 99%;text-align: right;">
+    <br />

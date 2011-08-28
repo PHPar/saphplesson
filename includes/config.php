@@ -1,0 +1,21 @@
+<?php
+/*#####################################################################*|
+|                          SaphpLesson4.0                               |
+| --------------------------------------------------------------------- |
+|  This Script Is Free To Use But don't Delete copyright                |
+|  Programmed By : Saleh AlMatrafe                                      |
+|  Mobile : +966505545229 | Skype phone : saphps                        |
+|  http://www.saphplesson.org  |  saphplesson@live.com(mail only)       |
+|*#####################################################################*/
+
+
+// ÇáãÓÊÖíÝ áÞÇÚÏÉ ÇáÈíÇäÇÊ
+$SQL_HOST="localhost";
+// ÇÓã ÇáãÓÊÎÏã áÞÇÚÏÉ ÇáÈíÇäÇÊ
+$SQL_USER="root";
+// ßáãÉ ÇáãÑæÑ áÞÇÚÏÉ ÇáÈíÇäÇÊ
+$SQL_PWD="123456";
+// ÇÓã ÞÇÚÏÉ ÇáÈíÇäÇÊ
+$SQL_DB="saphplesson";
+
+?>

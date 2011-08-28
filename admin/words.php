@@ -1,0 +1,84 @@
+<?php
+/*#####################################################################*|
+|                          SaphpLesson4.0                               |
+| --------------------------------------------------------------------- |
+|  This Script Is Free To Use But don't Delete copyright                |
+|  Programmed By : Saleh AlMatrafe                                      |
+|  Mobile : +966505545229 | Skype phone : saphps                        |
+|  http://www.saphplesson.org  |  saphplesson@live.com(mail only)       |
+|*#####################################################################*/
+
+require_once('./global.php');
+if(!$Premission[1]){
+    $MSG["TITLE"]   = "áæÍÉ ÇáÊÍßã";
+    $MSG["Error"]   = "áÇ íæÌÏ áÏíß ÕáÇÍíÇÊ áÏÎæá åÐå ÇáÕÝÍÉ";
+    $MSG["Referer"] = "login.php";
+    echo $tpl->display("msgbox.tpl");
+    exit;
+}
+$action = $_GET["action"];
+
+switch ($action) {
+case "add":
+    if($_POST["Word"] AND $_POST["Alt"]){
+        $Query = $db->query("INSERT INTO words SET WFind='".$_POST["Word"]."',WReplace='".$_POST["Alt"]."'");
+        if($Query){
+            $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+            $MSG["OK"]    = "Êã ÅÖÇÝÉ ÇáßáãÉ ÈäÌÇÍ";
+        }else{
+            $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+            $MSG["Error"] = "åäÇß ãÔßáÉ Ýí ÞÇÚÏÉ ÇáÈíÇäÇÊ áã íÊã ÅÖÇÝÉ ÇáßáãÉ";
+        }
+    }else{
+        $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+        $MSG["Error"] = "ÚÝæÇð æáßä áã Êßãá ßá ÇáÍÞæá";
+    }
+    echo $tpl->display("msgbox.tpl");
+    break;
+case "edit":
+    $id = intval($_GET["id"]);
+    if($id){
+        if ($_SERVER["REQUEST_METHOD"]=="POST"){
+            if($_POST["Word"] AND $_POST["Alt"]){
+                $Query = $db->query("UPDATE words SET WFind='".$_POST["Word"]."',WReplace='".$_POST["Alt"]."' WHERE WID=".$id);
+                if($Query){
+                    $MSG["TITLE"]   = "ÇáßáãÇÊ ÇáããäæÚÉ";
+                    $MSG["OK"]      = "Êã ÊÚÏíá ÇáßáãÉ ÈäÌÇÍ";
+                    $MSG["Referer"] = "words.php";
+                }else{
+                    $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+                    $MSG["Error"] = "åäÇß ãÔßáÉ Ýí ÞÇÚÏÉ ÇáÈíÇäÇÊ áã íÊã ÊÚÏíá ÇáßáãÉ";
+                }
+            }else{
+                $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+                $MSG["Error"] = "ÚÝæÇð æáßä áã Êßãá ßá ÇáÍÞæá";
+            }
+            echo $tpl->display("msgbox.tpl");
+            exit;
+        }
+        $word = $db->get_row('select * from words where WID='.$id);
+        echo $tpl->display("word_edit.tpl");
+    }
+    break;
+case "delete":
+    $id = intval($_GET["id"]);
+    if($id){
+        $Query = $db->query('delete from words where WID='.$id);
+
+        if($Query){
+            $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+            $MSG["OK"]    = "Êã ÍÐÝ ÇáßáãÉ ÈäÌÇÍ";
+        }else{
+            $MSG["TITLE"] = "ÇáßáãÇÊ ÇáããäæÚÉ";
+            $MSG["Error"] = "åäÇß ãÔßáÉ Ýí ÞÇÚÏÉ ÇáÈíÇäÇÊ áã íÊã ÍÐÝ ÇáßáãÉ";
+        }
+        echo $tpl->display("msgbox.tpl");
+    }
+    break;
+default :
+    $words = $db->get_results("select * from words order by WID");
+    $wnum  = $db->get_var("select count(*) from words order by WID");
+    echo $tpl->display("words.tpl");
+}
+
+?>

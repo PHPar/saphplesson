@@ -1,0 +1,156 @@
+<script type="text/javascript" language="javascript" src="includes/jscript/global.js"></script>
+<IF Name="{parent.id}">
+    <IF Name="{settings.SrchLink}">
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="cat-{parent.id}-1.html">{parent.Title}</a>&nbsp;&raquo;&nbsp;<a href="cat-{id}-1.html">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;≈÷«›… œ—” ÃœÌœ
+    <ELSE>
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={parent.id}">{parent.Title}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={id}">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;≈÷«›… œ—” ÃœÌœ
+    </IF>
+<ELSE>
+    <IF Name="{settings.SrchLink}">
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="cat-{id}-1.html">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;≈÷«›… œ—” ÃœÌœ
+    <ELSE>
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={id}">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;≈÷«›… œ—” ÃœÌœ
+    </IF>
+</IF>
+<br /><br />
+<IF Name="{do} eq show">
+<div align="center">
+  <center>
+  <table class="lessons" cellspacing="0" width="100%">
+    <tr>
+      <th class="lessons" width="100%">&nbsp;{MsgTitle}</th>
+    </tr>
+    <tr>
+      <td class="lessons" width="100%">{Msg}</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<br />
+</IF>
+<form onsubmit="return formCheck(this);" method="POST" action="add.php" name="newless" enctype="multipart/form-data">
+    <div id="smille">
+          <input type="hidden" name="ico" value="{ico}">
+          <table cellspacing="0" class="lessons" width="100%">
+            <tr>
+              <th class="lessons" width="50%">
+              &nbsp;«”„ﬂ:</th>
+              <th class="lessons" width="50%">
+              »—Ìœﬂ:</th>
+            </tr>
+            <tr>
+              <td align="center" class="lessons" width="50%">
+              <input type="text" name="Writer" size="53" class="Text" value="{name}"></td>
+              <td align="center" class="lessons" width="50%">
+              <input type="text" name="mail" size="53" dir="ltr" class="Text" value="{mail}"></td>
+            </tr>
+            <tr>
+              <th class="lessons" width="50%">
+              „Êﬁ⁄ﬂ:<span style="color: red">»œÊ‰ http://</span></th>
+              <th class="lessons" width="50%">
+              ⁄‰Ê«‰ «·œ—”:</th>
+            </tr>
+            <tr>
+              <td align="center" class="lessons" width="50%">
+              <input type="text" name="site" size="53"  value="{site}" dir="ltr" class="Text"></td>
+              <td align="center" class="lessons" width="50%">
+              <input type="text" name="lesstitle" size="53" class="Text" value="{lesstitle}"></td>
+            </tr>
+            <tr>
+              <th class="lessons" colspan="2" width="50%">
+              &nbsp;—„“ «·œ—” :</th>
+            </tr>
+            <tr>
+              <td align="center" class="lessons" colspan="2" width="50%">
+                  <table border="0" cellpadding="0" cellspacing="4" width="312">
+                    <tr>
+                      <td width="16">
+                      <div class="smille" onClick="tc('1');">
+                      <img border="0" src="images/icon/1.gif" width="17" height="17" alt="„» ”„"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('2');">
+                      <img border="0" src="images/icon/2.gif" width="17" height="17" alt="Ì€„“"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('3');">
+                      <img border="0" src="images/icon/3.gif" width="17" height="17" alt="„ ›«Ã∆"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('4');">
+                      <img border="0" src="images/icon/4.gif" width="17" height="17" alt="„»”Êÿ"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('5');">
+                      <img border="0" src="images/icon/5.gif" width="17" height="17" alt="„ Ê—ÿ"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('6');">
+                      <img border="0" src="images/icon/6.gif" width="17" height="17" alt="Õ“Ì‰"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('7');">
+                      <img border="0" src="images/icon/7.gif" width="17" height="17" alt="„⁄’»"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('8');">
+                      <img border="0" src="images/icon/8.gif" width="17" height="17" alt="›—Õ«‰"></div></td>
+                      <td width="16">
+                      <div class="smille" onClick="tc('9');">
+                      <img border="0" src="images/icon/9.gif" width="17" height="17" alt="Ì»ﬂÌ"></div></td>
+                      <td width="86">
+                      &nbsp;</td>
+                      <td width="23">
+                      <img name="tic" src="images/icon/({ico} ?{ico}:1).gif" border="1" width="17" height="17" alt="«·—„“ «·„Œ «—" style="border: 2px outset #FEFEFE"></td>
+                    </tr>
+                  </table>
+              </td>
+            </tr>
+            <tr>
+            <IF Name="{Captcha.0}">
+              <th class="lessons" <IF Name="{settings.Attach} eq 0">colspan="2"</IF> width="50%">
+           &nbsp;«œŒ· «·√—ﬁ«„ «·„ÊÃÊœ… ›Ì «·’Ê—…:</th>
+           </IF>
+           <IF Name="{settings.Attach}">
+              <th class="lessons" width="50%" ({Captcha.0} ? : colspan="2")>
+              &nbsp;„·› „—›ﬁ:<span style="color: red">« —ﬂÂ
+        		›«—€« ≈–« ﬂ‰  ·«  —Ìœ «—«›«ﬁ „·›.</span>
+              </th>
+           </IF>
+            </tr>
+            <tr>
+            <IF Name="{Captcha.0}">
+              <td align="center" <IF Name="{settings.Attach} eq 0">colspan="2"</IF> class="lessons" width="50%">
+	            <img src="captcha.php" border="1" width="100"  style="vertical-align: middle;" height="40" alt="Ì—ÃÏ ﬂ «»… «·√—ﬁ«„ «· Ì  —«Â«" />&nbsp;
+                <input class="Text" type="text" name="security" maxlength="4" dir="ltr" size="10" />
+              </td>
+            </IF>
+            <IF Name="{settings.Attach}">
+              <td align="center" class="lessons" width="50%" ({Captcha.0} ? : colspan="2")>
+                <input type="file" dir="ltr" name="AttachFile" class="Text" size="36">&nbsp;√ﬁ’Ï ÕÃ„ {settings.ASize}
+          		ﬂÌ·Ê »«Ì .
+              </td>
+            </IF>
+            </tr>
+            <tr>
+              <th class="lessons" colspan="2" width="50%">
+           &nbsp;«·œ—”</th>
+           </tr>
+        	<tr>
+        		<td colspan="2" class="lessons">
+                    <input type="hidden" name="forumid" size="20" value="{id}">
+                    <script type="text/javascript" src="includes/jscript/editor.js"></script>
+
+                    <script type="text/javascript">
+                    <!--
+                    var fontoptions = new Array("Arial", "Arial Black", "Arial Narrow", "Book Antiqua", "Century Gothic", "Comic Sans MS", "Courier New", "Fixedsys", "Franklin Gothic Medium", "Garamond", "Georgia", "Impact", "Lucida Console", "Lucida Sans Unicode", "MS Sans Serif", "Palatino Linotype", "System", "Tahoma", "Times New Roman", "Trebuchet MS", "Verdana");
+                    var sizeoptions = new Array(1, 2, 3, 4, 5, 6, 7);
+                    var istyles = new Array(); istyles = { "pi_button_down" : [ "#98B5E2", "#000000", "0px", "1px solid #316AC5" ], "pi_button_hover" : [ "#C1D2EE", "#000000", "0px", "1px solid #316AC5" ], "pi_button_normal" : [ "#ECE9D8", "#000000", "1px", "none" ], "pi_button_selected" : [ "#E1E6E8", "#000000", "0px", "1px solid #316AC5" ], "pi_menu_down" : [ "#98B5E2", "#316AC5", "0px", "1px solid #316AC5" ], "pi_menu_hover" : [ "#C1D2EE", "#316AC5", "0px", "1px solid #316AC5" ], "pi_menu_normal" : [ "#FFFFFF", "#000000", "0px", "1px solid #FFFFFF" ], "pi_popup_down" : [ "#98B5E2", "#000000", "0px", "1px solid #316AC5" ] };
+                    //-->
+                    </script>
+                    {Box}
+                    <script type="text/javascript">
+                    editInit();
+                    </script>
+                    <br />
+                </td>
+        	</tr>
+        </table>
+        <div style="text-align: center"><br />
+          <input type="submit" value="√÷› «·œ—”" name="Submit" class="Button">&nbsp;<input type="submit" value="⁄—÷ «·œ—”" name="Preview" class="Button">
+        </div>
+    </div>
+</form>

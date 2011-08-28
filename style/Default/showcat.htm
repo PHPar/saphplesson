@@ -1,0 +1,94 @@
+<IF Name="{parent.id}">
+    <IF Name="{settings.SrchLink}">
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="cat-{parent.id}-1.html">{parent.Title}</a>&nbsp;&raquo;&nbsp;{cinfo.Title}
+    <ELSE>
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={parent.id}">{parent.Title}</a>&nbsp;&raquo;&nbsp;{cinfo.Title}
+    </IF>
+<ELSE>
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;{cinfo.Title}
+</IF>
+<br /><br />
+<IF Name="{nsubcat}">
+<table class="lessons" cellspacing="0" width="100%">
+  <tr>
+    <th class='lessons' width="90%">
+    «·ﬁ”„</th>
+    <th class='lessons' width="10%">
+    ⁄œœ «·œ—Ê”</th>
+  </tr>
+<LOOP Name="{subcats}">
+   <tr>
+   <td class='lessons'>
+        &nbsp;<a href='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'><strong>{{Title}}</strong></a><br />&nbsp;&nbsp;&nbsp;&nbsp;{{Description}}</td>
+   <td class='lessons' style="text-align: center;">
+        <strong>{{NLess}}</strong>
+   </td>
+   </tr>
+</LOOP>
+</table>
+</IF>
+<IF NAME="{settings.VisitedAdd}">
+<br />
+<a href='add.php?id={id}'><img border='0' src='style/{settings.SiteStyle}/images/new.png' align='left' alt='√‰ﬁ— Â‰« ·≈÷«›… œ—” ÃœÌœ' /></a>
+</IF>
+<br /><br />
+<table class="lessons" cellspacing="0" width="100%">
+  <tr>
+    <th class='lessons' width="4%">
+    &nbsp;</th>
+    <th class='lessons' width="45%">
+    ⁄‰Ê«‰ «·œ—”</th>
+     <th class='lessons' width="6%">
+    «· ⁄·Ìﬁ« </th>
+    <th class='lessons' width="15%">
+    «·ﬂ« »</th>
+    <th class='lessons' width="6%">
+    «·“Ì«—« </th>
+    <th class='lessons' width="15%">
+     «—ÌŒ «·œ—”</th>
+  </tr>
+<IF NAME="{lsnnum}">
+<LOOP Name="{lessons}">
+<tr><td class='lessons' width='4%' align='center'><img border='0' src='images/icon/{{icon}}.gif'></td>
+<td class='lessons' width='45%'>&nbsp;&nbsp;<IF Name="{{Attach}}"><img src="style/Default/images/attach.gif" height="18" width="18" border="0" alt="«·œ—” ÌÕ ÊÌ ⁄·Ï „·› „—›ﬁ" style="vertical-align: middle;" /></IF><a href='({settings.SrchLink}?lesson-{{lessid}}-1.html:show.php?L={{lessid}})'>{{lesstitle}}</a><img src='images/ranks/r{{Rating}}.gif' title='{{Votes}} ’Ê ' alt='{{Votes}} ’Ê ' style="float: left;"></td>
+<td class='lessons' width='10%' align='center'>{{CTotal}}</td>
+<td class='lessons' width='10%' align='center'><a href='mailto:{{mail}}'>{{Writer}}</a></td>
+<td class='lessons' width='10%' align='center'>{{View}}</td>
+<td class='lessons' width='10%' align='center'>{{lessdate}}</td></tr>
+</LOOP>
+<ELSE>
+	<tr>
+		<td colspan="6" class="lessons" align="center" width="100%">·« Ì‹‹ÊÃœ œ—Ê” ›Ì Â‹‹–« «·ﬁ”„</td>
+	</tr>
+</IF>
+  <tr>
+    <th colspan="6" class='lessons' width="40%">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+              <td style="text-align: right;" width="100%">
+              {pager}
+              </td>
+              <td>
+                <select name='CategoryName' onchange='GoToCategory(this)'>
+                  <option selected="selected">«·«‰ ﬁ«· «·”—Ì⁄</option>
+                  <optgroup label='-----------------------------'>
+                  <option value='./'>ª «·’›Õ… «·—∆Ì”Ì…</option>
+                  <option value='({settings.SrchLink}?statistics.html:misc.php?action=stat)'>ª «·«Õ’«∆Ì« </option>
+                  <option value='({settings.SrchLink}?search.html:search.php)'>ª «·»ÕÀ</option></optgroup>
+                  <optgroup label='-----------------------------'>
+                  <LOOP Name="{exgo}">
+                  <option <IF Name="{{id}} eq {id}">selected="selected"</IF> value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>ª {{Title}}</option>
+                  <IF Name="{{sub}}">
+                    <LOOP Name="{{sub}}">
+                        <option <IF Name="{{id}} eq {id}">selected="selected"</IF> value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>&nbsp;&nbsp;&nbsp;ª {{Title}}</option>
+                    </LOOP>
+                  </IF>
+                  </LOOP>
+                  </optgroup>
+                </select>
+              </td>
+          </tr>
+      </table>
+    </th>
+  </tr>
+</table>

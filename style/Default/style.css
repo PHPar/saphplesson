@@ -1,0 +1,303 @@
+/* SaphpLesson Default Style */
+body
+{
+    background-color: #F4F7FB;
+    font-family: Tahoma;
+    font-size: 10pt;
+    color: #000000;
+    margin: 0px;
+}
+code
+{
+    font-family: 'courier New', Courier, monospace;
+    font-size: small;
+    font-weight: normal
+}
+
+a:link, a:active, a:visited
+{
+    color: #355C97;
+    text-decoration: none
+}
+
+a:hover
+{
+    color: #1a96d9;
+    text-decoration: none
+}
+
+/* Header Tab Menu */
+#tabs1
+{
+    width:100%;
+    float:right;
+    background:#F4F7FB;
+    font-size:93%;
+    line-height:normal;
+    /*border-bottom:1px solid #BCD2E6;*/
+}
+#tabs1 ul
+{
+    margin:0;
+    padding:10px 30px 0 10px;
+    list-style:none;
+}
+#tabs1 li
+{
+    display:inline;
+    margin:0;
+    padding:0;
+}
+#tabs1 a
+{
+    float:right;
+    background:url("images/tableft1.gif") no-repeat left top;
+    margin:0;
+    padding:0 2px 0 4px;
+    text-decoration:none;
+}
+#tabs1 a span
+{
+    float:right;
+    font: bold 12pt Arial;
+    display:block;
+    background:url("images/tabright1.gif") no-repeat right top;
+    padding:5px 15px 4px 6px;
+    color:#627EB7;
+}
+#tabs1 a span {float:none;}
+#tabs a:hover span
+{
+    color:#627EB7;
+}
+#tabs1 a:hover
+{
+    background-position:0% -42px;
+}
+#tabs1 a:hover span
+{
+    background-position:100% -42px;
+}
+#tabs1 #current a
+{
+    background-position:0% -42px;
+}
+#tabs1 #current a span
+{
+    background-position:100% -42px;
+}
+/* end tab */
+
+/* footer */
+#footer
+{
+    width:100%;
+    background:#F4F7FB;
+    font-size:93%;
+    padding-top: 10px;
+    line-height:normal;
+    /*border-top:1px solid #BCD2E6;*/
+}
+#footerright {
+    width:25%;
+    float:right;
+    padding-bottom:10px;
+}
+
+#footercenter {
+    width:53%;
+    float:right;
+    text-align: center;
+    padding-bottom:10px;
+}
+
+#footerleft {
+    width:22%;
+    float:right;
+    text-align: center;
+    padding-bottom:10px;
+}
+/* /footer */
+/* jQuery.Rating Plugin CSS */
+div.rating{cursor:pointer;margin:2em;clear:both;display:block}
+div.rating:after{content:'.';display:block;height:0;width:0;clear:both;visibility:hidden}
+div.cancel,div.star{float:right;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
+div.cancel,div.cancel a{background:url(images/delete.gif) no-repeat 0 -16px}
+div.star,div.star a{background:url(images/star.gif) no-repeat 0 0px}
+div.cancel a,div.star a{display:block;width:16px;height:100%;background-position:0 0px;border:1 solid #FF0000}
+div.star_on a{background-position:0 -16px!important}
+div.star_hover a,div.star_live a:hover{background-position:0 -32px}
+/* Read Only CSS */
+div.star_readonly a,div.star_readonly a:hover{cursor:default !important}
+/* Partial Star CSS */
+div.star{background:transparent!important;overflow:hidden!important}
+/* END jQuery.Rating Plugin CSS */
+.LinkFooter, .LinkFooter:link, .LinkFooter:active, .LinkFooter:visited
+{
+    color: #3366CC;
+    text-decoration: none
+}
+
+.LinkFooter:hover
+{
+    color: #000099;
+    text-decoration: none
+}
+
+.Button
+{
+	background: url('images/button.png') transparent repeat-x left top;
+	font: 8pt tahoma;
+    color: #ffffff;
+    width: 117px;
+    height: 24px;
+    border: 0;
+}
+
+.Button2
+{
+	background: url('images/button2.png') transparent repeat-x left top;
+	font: 8pt tahoma;
+    color: #ffffff;
+    width: 83px;
+    height: 17px;
+    border: 0;
+}
+
+.Text
+{
+	color: #355C97;
+    border: 1px solid #BDCEE8;
+    background-color: #ffffff;
+    font: 8pt tahoma;
+}
+
+.smilieTable
+{
+    border-width: 2px;
+    border-style: outset;
+}
+
+table.lessons
+{
+	font-family: Tahoma;
+	background-color: transparent;
+    border: 1px solid;
+	border-color: #BDCEE8 #f5fbff #f5fbff #BDCEE8 ;
+    margin:0px
+}
+
+td.lessons
+{
+	padding: 4px 4px 4px 4px;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #ffffff #BDCEE8 #BDCEE8 #ffffff;
+	font-family: Tahoma;
+    font-size: 11px;
+    background-color: #F4F7FB;;
+}
+
+th.lessons
+{
+	text-align: center;
+	font-size: 11px;
+    font-weight: normal;
+	color: #3366CC;
+	padding: 4px 4px 4px 4px;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #ffffff #BDCEE8 #BDCEE8 #ffffff;
+    background-color: #E8EEF7;
+}
+
+td
+{
+	font-family: Tahoma;
+    font-size: 10px;
+  /*color: #BDCEE8*/
+}
+td.toolbox
+{
+	padding: 0px 0px 0px 0px;
+	border-width: 0px;
+}
+
+#Editor
+{
+	padding-right: 6px;
+    padding-left: 6px;
+    background: #ece9d8;
+    padding-bottom: 6px;
+    padding-top: 6px
+}
+
+.imagebutton
+{
+	padding-right: 1px;
+    padding-left: 1px;
+    background: #ece9d8;
+    padding-bottom: 1px;
+    color: #000000;
+    border-top-style: none;
+    padding-top: 1px;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none
+}
+
+#htmlbox
+{
+	/*border-right: 2px inset;
+    border-top: 2px inset;*/
+    font: 10pt tahoma;
+    overflow: auto;
+    /*border-left: 2px inset;
+    border-bottom: 2px inset*/
+    border: 1px solid #7fd1fd;
+    background-color: #ffffff;
+    font: 10pt tahoma;
+}
+
+.popupwindow
+{
+	background-color: #ffffff;
+    border-right: appworkspace 1px solid;
+    padding-right: 3px;
+    border-top: appworkspace 1px solid;
+    padding-left: 3px;
+    z-index: 5;
+    left: 0px;
+    padding-bottom: 3px;
+    border-left: appworkspace 1px solid;
+    padding-top: 3px;
+    border-bottom: appworkspace 1px solid;
+    position: absolute;
+    top: 0px
+}
+
+.ocolor
+{
+	padding-right: 2px;
+    padding-left: 2px;
+    font-size: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px
+}
+.ocolor DIV
+{
+	border-right: #aca899 1px solid;
+    border-top: #aca899 1px solid;
+    border-left: #aca899 1px solid;
+    width: 11px;
+    border-bottom: #aca899 1px solid;
+    height: 11px
+}
+
+#popup_forecolor
+{
+	padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px
+}

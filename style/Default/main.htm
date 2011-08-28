@@ -1,0 +1,66 @@
+<br />
+<table class="lessons" cellSpacing=0 width="100%">
+  <tr>
+    <th class="lessons" width="40%">
+    ÇÎÊÜÜÑäÇ áßÜÜã</th>
+    <th class="lessons" width="20%">
+    ÚÏÏ ÇáÏÑæÓ</th>
+    <th class="lessons" width="20%">
+    ÚÏÏ ÇáÒæÇÑ</th>
+     <th class="lessons" width="20%">
+    ÇáãÊæÇÌÏæä ÇáÂä</th>
+  </tr>
+  <tr>
+    <td class="lessons" width="40%" style="text-align: center;">
+    <a target='_blank' href='({settings.SrchLink}?lesson-{lsnrnd.lessid}-1.html:show.php?L={lsnrnd.lessid})'>{lsnrnd.lesstitle}</a>
+    </td>
+    <td class="lessons" width="20%" style="text-align: center;">
+      {lsnnum}
+    </td>
+    <td class="lessons" width="20%" style="text-align: center;">
+      {settings.counter}
+    </td>
+    <td class="lessons" width="20%" style="text-align: center;">
+      {online}
+    </td>
+  </tr>
+  <IF Name="{islast}">
+  <tr>
+    <th colspan="4" class="lessons" width="40%">
+        <marquee behavior="scroll" direction="right" loop="250" scrollamount="4" scrolldelay="25" onmouseover="this.stop()" onmouseout="this.start()" width="100%" border="0">
+        <LOOP Name="{last10}">
+            <a class='LinkFooter' href='({settings.SrchLink}?lesson-{{lessid}}-1.html:show.php?L={{lessid}})'>{{lesstitle}}</a> ::
+        </LOOP>
+        </marquee>
+    </th>
+  </tr>
+  </IF>
+</table>
+<br />
+<table class="lessons" cellspacing="0" width="100%">
+  <tr>
+    <th class="lessons" width="85%">
+    ÇáÃŞÓÜÜÜÜÜÇã</th>
+    <th class="lessons" width="15%">
+    ÚÏÏ ÇáÏÑæÓ</th>
+  </tr>
+<IF Name="{ncat}">
+<LOOP Name="{cats}">
+  <tr>
+    <td class='lessons'>
+        <IF Name="{{CatImg}}"><img src="{{CatImg}}" border="0" style="float: right;" /></IF>&nbsp;<a href='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'><strong>{{Title}}</strong><br /></a>&nbsp;&nbsp;&nbsp;&nbsp;{{Description}}
+    </td>
+    <td class='lessons' style="text-align: center;">
+        <strong>{{NLess}}</strong>
+    </td>
+  </tr>
+</LOOP>
+<ELSE>
+    <td colspan="2" class="lessons" width="100%" style="text-align: center;">áÇ íæÌÜÜÏ ÇŞÓÜÜÇã ãÖÇİÉ
+    </td>
+</IF>
+  <tr>
+    <th colspan="2" class="lessons" width="100%">&nbsp;
+    </th>
+  </tr>
+</table>

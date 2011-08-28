@@ -1,0 +1,378 @@
+/* Digital Technologies Team Control Panel Style */
+
+body
+{
+    scrollbar-face-color: #EFEFEF;
+    scrollbar-3dlight-color: #000000;
+    scrollbar-darkshadow-color:#EFEFEF;
+    scrollbar-arrow-color: #231107;
+    scrollbar-track-color:#EFEFEF;
+    font-family: Tahoma , Microsoft Sans Serif;
+    font-size: 10pt;
+}
+td
+{
+    font-family: Tahoma , Microsoft Sans Serif;
+    font-size: 10pt;
+}
+.TextBox
+{
+    width: 200px;
+    font-family: Tahoma; font-size: 8pt;
+}
+textarea
+{
+    width: 200px;
+    height: 80px;
+    font-family: Tahoma; font-size: 8pt;
+}
+input#Button
+{
+    font-family: Tahoma;
+    font-size: 8pt;
+    font-weight: bold;
+    width: 126px;
+    height: 28px;
+}
+.Box_H
+{
+    margin:0;
+    color: #000000;
+    font:bold 8pt Tahoma,Microsoft Sans Serif,sans-serif;
+    width: 200;
+    height: 19;
+    text-align: center;
+    background:url('images/box_h.gif') no-repeat 0 bottom;
+    padding:10px 0 2px 0;
+}
+.Box_C
+{
+    padding:0 10px 0px 5px;
+    margin:0;
+    color: #808080;
+    line-height:150%;
+    width: 200;
+    font-family: Tahoma; font-size: 8pt;
+    text-align: right;
+    background:#FFFFFF url('images/box_c.gif')  repeat-y;
+}
+.Box_F
+{
+    padding:0px 0 10px 0;
+    margin:0;
+    width: 200;
+    background:url('images/box_f.gif') no-repeat 0 100%;
+    list-style-type:none;
+}
+a,a:visited
+{
+  text-decoration:none;
+  color: #333333
+}
+a:hover
+{
+  text-decoration:none;
+  color: #999999
+}
+.Win_H
+{
+	background-image: url('images/win_h.gif');
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+	font-weight: bold;
+    text-align: right;
+	color: #808080;
+	background-repeat: repeat-x;
+}
+.Win_F
+{
+	background-image: url('images/win_f.gif');
+	background-repeat: repeat-x;
+}
+.Win_R
+{
+	background-image: url('images/win_r.gif');
+	background-repeat: repeat-y;
+	background-position: right;
+}
+.Win_L
+{
+	text-align: left;
+	background-image: url('images/win_l.gif');
+	background-repeat: repeat-y;
+	background-position: left;
+}
+.Win_HL
+{
+	text-align: left;
+	background-image: url('images/win_h.gif');
+}
+.Win_C
+{
+	background-color: #F2F2F2;
+    text-align: right;
+}
+.Win_Elem
+{
+	color: #333333;
+	text-align: center;
+	font-weight: bold;
+	font-size: 8pt;
+	font-family: Tahoma,Microsoft Sans Serif;
+}
+.GraySmall
+{
+	color: #666666;
+	text-align: center;
+	font-weight: normal;
+	font-size: 8pt;
+	font-family: Tahoma,Microsoft Sans Serif;
+}
+.Win_Lin
+{
+	background-color: #333333;
+}
+.EditHref,.EditHref:visited
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: #008000;
+}
+.DelHref,.DelHref:visited
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: #FF0000;
+}
+.Disabled,.Disabled:visited
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    color: #808080;
+}
+.DIVRed
+{
+    background-image: url(images/bgnote4.gif);
+    background-color: #FFDDDD;
+    border: 1px solid #800000;
+    color:#800000;
+    width:95%;
+    padding:8px;
+    text-align:center;
+    font-weight:bold;
+}
+.DIVOrange{
+  background-image: url(images/bgnote.gif);
+  background-color: #FFE6CC;
+  border: 1px solid #CE5300;
+  color:#CE5300;
+  width:95%;
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+}
+.PageTitle {
+    border: 2px solid #999999;
+    background-color: #CCCCCC;
+    color: #1C366C;
+    font-weight: bold;
+    text-align: center;
+    height:35px
+}
+#Editor {
+	padding-right: 6px;
+    padding-left: 6px;
+    background: #ece9d8;
+    padding-bottom: 6px;
+    padding-top: 6px
+}
+.imagebutton {
+	padding-right: 1px;
+    padding-left: 1px;
+    background: #ece9d8;
+    padding-bottom: 1px;
+    color: #000000;
+    border-top-style: none;
+    padding-top: 1px;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none
+}
+
+#htmlbox {
+	border-right: 2px inset;
+    border-top: 2px inset;
+    font: 10pt verdana;
+    overflow: auto;
+    border-left: 2px inset;
+    border-bottom: 2px inset
+}
+
+.popupwindow {
+	background-color: #ffffff;
+    border-right: appworkspace 1px solid;
+    padding-right: 3px;
+    border-top: appworkspace 1px solid;
+    padding-left: 3px;
+    z-index: 5;
+    left: 0px;
+    padding-bottom: 3px;
+    border-left: appworkspace 1px solid;
+    padding-top: 3px;
+    border-bottom: appworkspace 1px solid;
+    position: absolute;
+    top: 0px
+}
+
+.ocolor {
+	padding-right: 2px;
+    padding-left: 2px;
+    font-size: 1px;
+    padding-bottom: 2px;
+    padding-top: 2px
+}
+.ocolor DIV {
+	border-right: #aca899 1px solid;
+    border-top: #aca899 1px solid;
+    border-left: #aca899 1px solid;
+    width: 11px;
+    border-bottom: #aca899 1px solid;
+    height: 11px
+}
+
+#popup_forecolor {
+	padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    padding-top: 3px
+}
+/******************************************************************************/
+.Note {
+  font-family: Tahoma;
+  font-size: 8pt; color: #FF0000;
+  font-weight: bold;
+}
+.TextRed { font-family: Tahoma , Microsoft Sans Serif; color: #FF0000; font-weight: bold; }
+
+.TD2 { font-family: Tahoma , Microsoft Sans Serif; font-size: 10pt; text-align: center; }
+.TD_TOP_Page { border: 2px solid #999999; background-color: #CCCCCC; color: #1C366C; font-weight: bold; text-align: center; height:35px }
+.TD_MenuInfo { color: #800000; font-weight: bold; text-align: right; height:33px;}
+
+.TextTD { font-family: Tahoma , Microsoft Sans Serif; border: 1px solid #999999; background-color: #FFFFFF; color: #1C366C; font-weight: bold; background-image:url('../DT_CP/images/TextTD.gif'); background-repeat: no-repeat; width: 300px; height: 25px; background-position: center; }
+.TextTD0 { font-family: Tahoma , Microsoft Sans Serif; border: 1px solid #999999; background-color: #FFFFFF; color: #1C366C; font-weight: bold; }
+.TextArea { font-family: Tahoma , Microsoft Sans Serif; border: 1px solid #999999; background-color: #FFFFFF; color: #1C366C; font-weight: bold; background-image:url('../DT_CP/images/TextArea.gif'); background-repeat: no-repeat; width: 300px; height: 125px; background-position: center; }
+
+
+.MSGError { text-align: center; color: #FF0000; font-family: Tahoma; font-weight: bold; }
+.MSGGood { text-align: center; color: #008000; font-family: Tahoma; font-weight: bold; }
+
+.TitleTD_DT { text-align: right; color: #666666; font-family: Tahoma; font-weight: bold;
+           background-color: #F1F1F1; background-image: url('../DT_CP/images/dt-bar.gif');
+           background-repeat: repeat-x; background-position: left top }
+           
+.TitleTD { text-align: right; color: #666666; font-family: Tahoma; font-weight: bold;
+           background-color: #F1F1F1; background-image: url('images/admintext_03.gif');
+           background-repeat: repeat-x; background-position: left top }
+.TitleTD2 { text-align: center; color: #666666; font-family: Tahoma; font-weight: bold;
+           background-color: #F1F1F1; background-image: url('../DT_CP/images/admintext_03.gif');
+           background-repeat: repeat-x; background-position: left top }
+.TitleTD_Edit { text-align: center; color: #008000; font-family: Tahoma; font-weight: bold;
+           background-color: #F1F1F1; background-image: url('../DT_CP/images/admintext_03.gif');
+           background-repeat: repeat-x; background-position: left top }
+.TitleTD_Delete { text-align: center; color: #FF0000; font-family: Tahoma; font-weight: bold;
+           background-color: #F1F1F1; background-image: url('../DT_CP/images/admintext_03.gif');
+           background-repeat: repeat-x; background-position: left top }
+
+.TextTD1 { text-align: center; color: #800000; font-family: Tahoma; font-weight: bold; }
+
+
+.Link1, .Link1:visited { text-align: right; color: #1C366C; font-family: Tahoma; font-weight: bold; }
+.Link1:hover { text-align: right; color: #FF0000; font-family: Tahoma; font-weight: bold; }
+
+
+.BOXB_DT_H {
+background-image: url('images/admintext_03.gif'); background-repeat: repeat-x; background-position-x: left;
+}
+.BOXB_DT_C1 {
+  background-color: #F1F1F1; background-image: url('images/admintext_08.gif'); background-repeat: repeat-y; background-position-x: right;
+}
+.BOXB_DT_C2 {
+  background-color: #F1F1F1; background-image: url('images/admintext_06.gif'); background-repeat: repeat-y; background-position-x: left;
+}
+.BOXB_DT_F1 {
+  background-color: #F2F2F2; background-image: url('images/admintext_08.gif'); background-repeat: repeat-y; background-position-x: right;
+}
+.BOXB_DT_F2 {
+background-color: #F1F1F1; background-image: url('images/admintext_12.gif'); background-repeat: repeat-x; background-position-y: bottom
+}
+.BOXB_DT_F3 {
+background-color: #F1F1F1; background-image: url('images/admintext_06.gif'); background-repeat: repeat-y; background-position-x: left
+}
+
+
+.BOXB_H {
+background-image: url('images/admintext_03.gif'); background-repeat: repeat-x; background-position-x: left;
+}
+.BOXB_C1 {
+  background-color: #F1F1F1; background-image: url('images/admintext_08.gif'); background-repeat: repeat-y; background-position-x: right;
+}
+.BOXB_C2 {
+  background-color: #F1F1F1; background-image: url('images/admintext_06.gif'); background-repeat: repeat-y; background-position-x: left;
+}
+.BOXB_F1 {
+  background-color: #F2F2F2; background-image: url('images/admintext_08.gif'); background-repeat: repeat-y; background-position-x: right;
+}
+.BOXB_F2 {
+background-color: #F1F1F1; background-image: url('images/admintext_12.gif'); background-repeat: repeat-x; background-position-y: bottom
+}
+.BOXB_F3 {
+background-color: #F1F1F1; background-image: url('images/admintext_06.gif'); background-repeat: repeat-y; background-position-x: left
+}
+
+
+ .DIVGreen{
+  background-image: url(images/bgnote2.gif);
+  background-color: #CAEFC9;
+  border: 1px solid #247122;
+  color:#247122;
+  width:95%;
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+ }
+
+  .DIVGray{
+  background-image: url(images/bgnote5.gif);
+  background-color: #F3F3F3;
+  border: 1px solid #666666;
+  color:#666666;
+  width:95%;
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+ }
+
+   .DIVOrange{
+  background-image: url(images/bgnote.gif);
+  background-color: #FFE6CC;
+  border: 1px solid #CE5300;
+  color:#CE5300;
+  width:95%;
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+ }
+
+  .DIVBlue{
+  background-image: url(images/bgnote3.gif);
+  background-color: #CCE6FF;
+  border: 1px solid #004182;
+  color:#004182;
+  width:95%;
+  padding:8px;
+  text-align:center;
+  font-weight:bold;
+ }

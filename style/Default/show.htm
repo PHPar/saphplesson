@@ -1,0 +1,136 @@
+<IF Name="{parent.id}">
+    <IF Name="{settings.SrchLink}">
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="cat-{parent.id}-1.html">{parent.Title}</a>&nbsp;&raquo;&nbsp;<a href="cat-{lsn.forumno}-1.html">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;{lsn.lesstitle}
+    <ELSE>
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={parent.id}">{parent.Title}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={lsn.forumno}">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;{lsn.lesstitle}
+    </IF>
+<ELSE>
+    <IF Name="{settings.SrchLink}">
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="cat-{lsn.forumno}-1.html">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;{lsn.lesstitle}
+    <ELSE>
+    <a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;<a href="showcat.php?id={lsn.forumno}">{cinfo.Title}</a>&nbsp;&raquo;&nbsp;{lsn.lesstitle}
+    </IF>
+</IF>
+<br /><br />
+<table class="lessons" cellspacing="0" width="100%">
+  <tr>
+    <th colspan="3" class="lessons" width="50%"><img border='0' src='images/icon/{lsn.icon}.gif' width='17' height='17'>&nbsp;{lsn.lesstitle}</th>
+    <th colspan="2" class="lessons" width="50%">
+    &nbsp;√÷Ì› ›Ì: {lsn.lessdate}</th>
+  </tr>
+  <tr>
+    <td colspan="5" class="lessons" width="100%">{lsn.less}
+    <br />
+    <IF Name="{lsn.Attach}">
+    <br />
+    <img src="{lsn.Attach.FImage}" alt="{lsn.Attach.FType}" border="0" />&nbsp;<a href="options.php?action=attach&id={lsn.Attach.AID}">{lsn.Attach.AName}</a> ⁄œœ „—«  «· Õ„Ì· : {lsn.Attach.ACounter} „—…
+    <br />
+    </IF>
+    </td>
+  </tr>
+  <tr>
+    <th class="lessons" width="40%">
+    «·ﬂ« »: {lsn.Writer}</th>
+    <th class="lessons" width="5%"><a href="mailto:{lsn.mail}">
+    <img border="0" alt='«‰ﬁ— Â‰« ·„—«”·… {lsn.Writer}' src="style/{settings.SiteStyle}/images/email.png" width="24" height="24"></a></th>
+    <th class="lessons" width="5%">
+    <a href="http://{lsn.site}" ({settings.NoFollow} ? rel="nofollow" : '') target="_blank">
+    <img border="0" src="style/{settings.SiteStyle}/images/site.png" alt="√‰ﬁ— Â‰« ··≈‰ ﬁ«· ≈·Ï „Êﬁ⁄ {lsn.Writer}" width="24" height="24"></a></th>
+    <th class="lessons" width="25%">
+        <a href="javascript:window.external.AddFavorite('{lsn.lsnLink}','{lsn.lesstitle}')"><img src="style/{settings.SiteStyle}/images/b_favourites.gif" width="16" height="16" border="0" alt="≈÷«›… ··„›÷·…" /></a>
+        <a href="http://www.google.com/bookmarks/mark?op=edit&output=popup&bkmk={lsn.lsnlinkurl}&title={lsn.lsntitlelnk}" target="_blank" rel="nofollow"><img src="style/{settings.SiteStyle}/images/b_google.png" width="16" height="16" border="0" alt="≈÷«›… ·„›÷·… Google" /></a>
+        <a href="http://del.icio.us/post?url={lsn.lsnlinkurl}&title={lsn.lsntitlelnk}" target="_blank" rel="nofollow"><img src="style/{settings.SiteStyle}/images/b_delicious.png" width="16" height="16" border="0" alt="≈÷«›… ·„›÷·… Delicious" /></a>
+        <a href="http://digg.com/submit?phase=2&url={lsn.lsnlinkurl}&title={lsn.lsntitlelnk}" target="_blank" rel="nofollow"><img src="style/{settings.SiteStyle}/images/b_digg.png" width="16" height="16" border="0" alt="≈÷«›… ·„›÷·… Digg" /></a>
+        <a href="http://www.facebook.com/sharer.php?u={lsn.lsnlinkurl}&t={lsn.lsntitlelnk}" target="_blank" rel="nofollow"><img src="style/{settings.SiteStyle}/images/b_facebook.gif" width="16" height="16" border="0" alt="≈÷«›… ·„›÷·… Facebook" /></a>
+    </th>
+    <th class="lessons" width="25%" align="center">
+        <input name="star1" type="radio" value="1" <IF Name="{lsn.Rating} eq 1">checked="checked"</IF> class="star"/>
+        <input name="star1" type="radio" value="2" <IF Name="{lsn.Rating} eq 2">checked="checked"</IF> class="star"/>
+        <input name="star1" type="radio" value="3" <IF Name="{lsn.Rating} eq 3">checked="checked"</IF> class="star"/>
+        <input name="star1" type="radio" value="4" <IF Name="{lsn.Rating} eq 4">checked="checked"</IF> class="star"/>
+        <input name="star1" type="radio" value="5" <IF Name="{lsn.Rating} eq 5">checked="checked"</IF> class="star"/>
+        <script type="text/javascript">
+            $('.star').rating({
+              callback: function(value, link){
+                $.post("options.php?action=rating", { id: "{lsn.lessid}", star1: value } );
+                alert(' „  ﬁÌÌ„ «·œ—” ‘ﬂ—« ·ﬂ');
+               	$('.star').each(function(){
+               		this.disabled = 'disabled';
+               	});
+              }
+            });
+        </script>
+  </th>
+  </tr>
+  <tr>
+    <th colspan="5" class="lessons" width="100%">
+    ŒÌ«—«  «·œ—” : <a href="javascript:small('options.php?action=sendlsn&L={lsn.lessid}')"><img src="style/{settings.SiteStyle}/images/friend.png" width="24" height="24" style="vertical-align: middle;" border="0" alt="«—”· «·œ—” ·’œÌﬁ" />&nbsp;«—”· «·œ—” ·’œÌﬁ</a>&nbsp;
+    <a href="options.php?action=print&L={id}"><img src="style/{settings.SiteStyle}/images/printer.png" width="24" height="24" style="vertical-align: middle;" border="0" alt="ÿ»«⁄… «·œ—”" />&nbsp;ÿ»«⁄… «·œ—”</a>&nbsp;
+    <IF Name="{settings.SaveWord}"><a href='({settings.SrchLink}?lesson-{id}.rtf:options.php?action=word&L={id})'><img src="style/{settings.SiteStyle}/images/word.png" width="19" height="24" style="vertical-align: middle;" border="0" alt="Õ›Ÿ «·œ—” ﬂ„·› Word" />&nbsp;Õ›Ÿ «·œ—” ﬂ„·› Word</a>&nbsp;</IF>
+    <IF Name="{settings.SavePDF}"><a href='({settings.SrchLink}?lesson-{id}.pdf:options.php?action=pdf&L={id})'><img src="style/{settings.SiteStyle}/images/pdf.png" width="19" height="24" style="vertical-align: middle;" border="0" alt="Õ›Ÿ «·œ—” ﬂ„·› PDF" />&nbsp;Õ›Ÿ «·œ—” ﬂ„·› PDF</a></IF>
+    </th>
+  </tr>
+</table>
+<br />
+<IF Name="{settings.Comment}">
+<a name="comments"></a>
+<table Class="lessons" cellSpacing="0" width="100%">
+  <tr>
+    <th class="lessons" style="text-align: right;">
+«· ⁄·Ìﬁ« 
+<a href="javascript:small('options.php?action=addcomment&L={lsn.lessid}&LCat={lsn.forumno}&LsnTitle={lsn.lesstitle}')"><img border='0' align="left" src='style/{settings.SiteStyle}/images/addcmnt.png'></a>
+    </th>
+  </tr>
+  <tr><td class="lessons">
+<IF Name="{ncmnt}">
+<table class="lessons" cellSpacing="0" width="100%">
+<LOOP Name="{cmnts}">
+	<tr>
+		<td class="lessons" width="25%">ª<a href='mailto:{{CMail}}'>{{CName}}</a><BR>
+		&nbsp; √÷Ì› ›Ì: {{CDate}}
+		</td>
+		<td class="lessons" width="75%">{{Cmnt}}</td>
+	</tr>
+</LOOP>
+</table>
+<ELSE>
+<table class="lessons" cellSpacing="0" width="100%">
+	<tr>
+		<td class="lessons" ALIGN="CENTER" width="100%">·« Ì‹ÊÃ‹œ  ‹⁄·Ì‹ﬁ«  ⁄·Ï Â‹–« «·‹œ—”</td>
+	</tr>
+</table>
+</IF>
+</td>
+</tr>
+  <tr>
+    <th class='lessons' width="40%">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+              <td style="text-align:right" width="100%">
+              {pager}
+              </td>
+              <td>
+                <select name='CategoryName' onchange='GoToCategory(this)'>
+                  <option selected="selected">«·«‰ ﬁ«· «·”—Ì⁄</option>
+                  <optgroup label='-----------------------------'>
+                  <option value='./'>ª «·’›Õ… «·—∆Ì”Ì…</option>
+                  <option value='({settings.SrchLink}?statistics.html:misc.php?action=stat)'>ª «·«Õ’«∆Ì« </option>
+                  <option value='({settings.SrchLink}?search.html:search.php)'>ª «·»ÕÀ</option></optgroup>
+                  <optgroup label='-----------------------------'>
+                  <LOOP Name="{exgo}">
+                  <option value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>ª {{Title}}</option>
+                  <IF Name="{{sub}}">
+                    <LOOP Name="{{sub}}">
+                        <option value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>&nbsp;&nbsp;&nbsp;ª {{Title}}</option>
+                    </LOOP>
+                  </IF>
+                  </LOOP>
+                  </optgroup>
+                </select>
+              </td>
+          </tr>
+      </table>
+    </th>
+  </tr>
+</table>
+    </IF><BR><BR>

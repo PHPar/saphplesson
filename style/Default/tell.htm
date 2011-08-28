@@ -1,0 +1,50 @@
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;«Œ»— ÷œÌﬁﬂ
+<br /><br />
+<form method="POST" action="misc.php?action=tell" onsubmit="return CheckField(this)">
+    <table align="center" cellspacing="0" class="lessons" width='100%'>
+        <tr>
+            <th width='21%' class="lessons">
+            «”„ﬂ :</th>
+            <th width='79%' class="lessons">
+            «”„ ’œÌﬁﬂ:</th>
+        </tr>
+        <tr>
+            <td class="lessons" width='50%' style="text-align: center;">
+            <input type='text' name='NameYou' size='44' class="Text"></td>
+            <td class="lessons" width='50%' style="text-align: center;">
+            <input type='text' name='NameFrind' size='44' class="Text"></td>
+        </tr>
+        <tr>
+            <th width='21%' class="lessons">
+            »—Ìœﬂ «·≈·ﬂ —Ê‰Ì:</th>
+            <th width='79%' class="lessons">
+            »—Ìœ ’œÌﬁﬂ «·≈·ﬂ —Ê‰Ì:</th>
+        </tr>
+        <tr>
+            <td class="lessons" width='50%' style="text-align: center;">
+            <input type='text' name='MailYou' size='44' class="Text" dir="ltr"></td>
+            <td class="lessons" width='50%' style="text-align: center;">
+            <input type='text' name='MailFrind' size='44' class="Text" dir="ltr"></td>
+        </tr>
+        <tr>
+            <th ({Captcha.3}? :colspan="2") class="lessons">‰’ «·—”«·…:</th>
+            <IF Name="{Captcha.3}">
+            <th class="lessons">’Ê—… «· Õﬁﬁ:</th>
+            </IF>
+        </tr>
+        <tr>
+            <td ({Captcha.3}? :colspan="2") class="lessons" style="text-align: center;">
+            <textarea rows="6" name="MSG" cols="69" class="Text">«‰’Õﬂ »“Ì«—… Â–« «·„Êﬁ⁄ ·„« ›ÌÂ „‰ ›«∆œ… ” Ãœ œ—Ê” „›Ìœ… Ê ⁄·Ì„Ì… Õ Ï «·«Õ —«› ” Ãœ «·„Êﬁ⁄ ⁄·Ï «·—«»ÿ «· «·Ì: {settings.SiteLink}</textarea>
+            </td>
+            <IF Name="{Captcha.3}">
+            <td class="lessons" width='50%' style="text-align: center;">
+            <img src="captcha.php" border="1" width="100"  style="vertical-align: middle;" height="40" alt="Ì—ÃÏ ﬂ «»… «·√—ﬁ«„ «· Ì  —«Â«" />&nbsp;
+            <input class="Text" type="text" name="security" maxlength="4" dir="ltr" size="10" /></td>
+            </IF>
+        </tr>
+    </table>
+    <br />
+    <div style="text-align: center;">
+            <input type="submit" value="«Œ»«— ’œÌﬁﬂ" name="Send" Class="Button">&nbsp;<input type="reset" value=" ‹‹—«Ã‹‹⁄" name="Clear" Class="Button">
+    </div>
+</form>

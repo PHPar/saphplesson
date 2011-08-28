@@ -1,0 +1,67 @@
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;‰ ÌÃ… «·»ÕÀ ⁄‰ <strong>{Word}</strong>
+<br /><br />
+
+<table class="lessons" cellspacing="0" width="100%">
+  <tr>
+    <th class='lessons' colspan="6">
+     „ «·⁄ÀÊ— ⁄·Ï {nres} ({single} ? œ—” : œ—Ê” )</th>
+  </tr>
+  <tr>
+    <th class='lessons' width="4%">
+    &nbsp;</th>
+    <th class='lessons' width="45%">
+    ⁄‰Ê«‰ «·œ—”</th>
+     <th class='lessons' width="16%">
+    «·ﬁ”„</th>
+    <th class='lessons' width="15%">
+    «·ﬂ« »</th>
+    <th class='lessons' width="6%">
+    «·“Ì«—« </th>
+    <th class='lessons' width="10%">
+     «—ÌŒ «·œ—”</th>
+  </tr>
+<IF NAME="{nresult}">
+<LOOP Name="{results}">
+<tr><td class='lessons' width='4%' align='center'><img border='0' src='images/icon/{{icon}}.gif'></td>
+<td class='lessons' width='45%'>&nbsp;&nbsp;{{AttchImg}}<a href='({settings.SrchLink}?lesson-{{lessid}}-1.html:show.php?L={{lessid}})'>{{lesstitle}}</a></td>
+<td class='lessons' width='10%' align='center'><a href='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>{{Title}}</a></td>
+<td class='lessons' width='10%' align='center'><a href='mailto:{{mail}}'>{{Writer}}</a></td>
+<td class='lessons' width='10%' align='center'>{{View}}</td>
+<td class='lessons' width='10%' align='center'>{{lessdate}}</td></tr>
+</LOOP>
+<ELSE>
+	<tr>
+		<td colspan="6" Class="lessons" ALIGN="CENTER" width="100%">·„ Ì „ «·⁄ÀÊ— ⁄·Ï ‰ «∆Ã</td>
+	</tr>
+</IF>
+  <tr>
+    <th colspan="6" class='lessons' width="40%">
+      <table cellspacing="0" cellpadding="0" width="100%" border="0">
+          <tr>
+              <td style="text-align: right" width="100%">
+              {pager}
+              </td>
+              <td>
+                <select name='CategoryName' onchange='GoToCategory(this)'>
+                  <option selected="selected">«·«‰ ﬁ«· «·”—Ì⁄</option>
+                  <optgroup label='-----------------------------'>
+                  <option value='./'>ª «·’›Õ… «·—∆Ì”Ì…</option>
+                  <option value='({settings.SrchLink}?statistics.html:misc.php?action=stat)'>ª «·«Õ’«∆Ì« </option>
+                  <option value='({settings.SrchLink}?search.html:search.php)'>ª «·»ÕÀ</option></optgroup>
+                  <optgroup label='-----------------------------'>
+                  <LOOP Name="{exgo}">
+                  <option value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>ª {{Title}}</option>
+                  <IF Name="{{sub}}">
+                    <LOOP Name="{{sub}}">
+                        <option value='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>&nbsp;&nbsp;&nbsp;ª {{Title}}</option>
+                    </LOOP>
+                  </IF>
+                  </LOOP>
+                  </optgroup>
+                </select>
+              </td>
+          </tr>
+      </table>
+    </th>
+  </tr>
+</table>

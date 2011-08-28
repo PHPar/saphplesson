@@ -1,0 +1,99 @@
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;ÇÍÕÇÆíÇÊ
+<br /><br />
+  <table cellspacing="0" class="lessons" width="100%">
+    <tr>
+      <th class="lessons" width="21%">
+      ÚÏÏ ÇáÏÑæÓ</th>
+      <th class="lessons" width="19%">
+      ÚÏÏ ÇáÒæÇÑ</th>
+      <th class="lessons" width="18%">
+      ÚÏÏ ÇáãÑİŞÇÊ</th>
+      <th class="lessons" width="16%">
+      ÚÏÏ ÇáÃŞÓÇã</th>
+      <th class="lessons" width="22%">
+      ÚÏÏ ÇáãÊæÇÌÏæä ÇáÂä</th>
+    </tr>
+    <tr>
+      <td class="lessons" width="21%" align="center">
+      {lsnnum}</td>
+      <td class="lessons" width="19%" align="center">
+      {settings.counter}</td>
+      <td class="lessons" width="18%" align="center">
+      {atcnum}</td>
+      <td class="lessons" width="16%" align="center">
+      {catnum}</td>
+      <td class="lessons" width="22%" align="center">
+      {online}</td>
+    </tr>
+  </table>
+<br />
+<table cellspacing='0' class='lessons' width='100%'>
+<IF Name="{isvisit}">
+  <tr>
+    <th colspan="7" class='lessons'>
+    ÇİÖá 5 ÏÑæÓ ãä ÍíË ÚÏÏ ÇáÒíÇÑÇÊ
+    </th>
+  </tr>
+  <tr>
+    <th width='4%' class='lessons'>
+    &nbsp;</th>
+    <th width='40%' class='lessons'>
+    ÚäæÇä ÇáÏÑÓ</th>
+    <th width='17%' class='lessons'>
+    ÇáßÇÊÈ</th>
+    <th width='15%' class='lessons'>
+    ÇáŞÓã</th>
+    <th width='10%' class='lessons'>
+    ÇáÒíÇÑÇÊ</th>
+    <th width='15%' class='lessons'>
+    ÊÇÑíÎ ÇáÏÑÓ</th>
+  </tr>
+  <LOOP Name="{visit5}">
+    <tr>
+        <td class='lessons' align='center'><img border='0' src='images/icon/{{icon}}.gif'></td>
+        <td class='lessons'>&nbsp;&nbsp;{{AttchImg}}<a href='({settings.SrchLink}?lesson-{{lessid}}-1.html:show.php?L={{lessid}})'>{{lesstitle}}</a><img src='images/ranks/r{{Rating}}.gif' title='{{Votes}} ÕæÊ' alt='{{Votes}} ÕæÊ' style="float: left;"></td>
+        <td class='lessons' align='center'><a href='mailto:{{mail}}'>{{Writer}}</a></td>
+        <td class='lessons' align='center'><a href='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>{{Title}}</a></td>
+        <td class='lessons' align='center'>{{View}}</td>
+        <td class='lessons' align='center'>{{lessdate}}</td>
+    </tr>
+  </LOOP>
+</IF>
+<IF Name="{isvotes}">
+  <tr>
+    <th colspan="7" class='lessons'>
+    ÇİÖá 5 ÏÑæÓ ãä ÍíË ÚÏÏ ÇáãÕæøÊíä
+    </th>
+  </tr>
+  <tr>
+    <th width='4%' class='lessons'>
+    &nbsp;</th>
+    <th width='40%' class='lessons'>
+    ÚäæÇä ÇáÏÑÓ</th>
+    <th width='17%' class='lessons'>
+    ÇáßÇÊÈ</th>
+    <th width='15%' class='lessons'>
+    ÇáŞÓã</th>
+    <th width='10%' class='lessons'>
+    ÇáÒíÇÑÇÊ</th>
+    <th width='15%' class='lessons'>
+    ÊÇÑíÎ ÇáÏÑÓ</th>
+  </tr>
+  <LOOP Name="{votes5}">
+    <tr>
+        <td class='lessons' align='center'><img border='0' src='images/icon/{{icon}}.gif'></td>
+        <td class='lessons'>&nbsp;&nbsp;{{AttchImg}}<a href='({settings.SrchLink}?lesson-{{lessid}}-1.html:show.php?L={{lessid}})'>{{lesstitle}}</a><img src='images/ranks/r{{Rating}}.gif' title='{{Votes}} ÕæÊ' alt='{{Votes}} ÕæÊ' style="float: left;"></td>
+        <td class='lessons' align='center'><a href='mailto:{{mail}}'>{{Writer}}</a></td>
+        <td class='lessons' align='center'><a href='({settings.SrchLink}?cat-{{id}}-1.html:showcat.php?id={{id}})'>{{Title}}</a></td>
+        <td class='lessons' align='center'>{{View}}</td>
+        <td class='lessons' align='center'>{{lessdate}}</td>
+    </tr>
+  </LOOP>
+</IF>
+  <tr>
+    <th colspan="7" class='lessons'>
+    &nbsp;
+    </th>
+  </tr>
+</table>
+<br /><br />

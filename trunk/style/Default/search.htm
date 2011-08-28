@@ -1,0 +1,86 @@
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;«·»ÕÀ ›Ì «·œ—Ê”
+<br /><br />
+<form method="POST" action="search.php">
+<table cellspacing="0" class="lessons" width='100%'>
+    <tr>
+      <th width="33%" class="lessons">
+      <label for="SearchWord">&nbsp;ﬂ·„… «·»ÕÀ:</label></th>
+      <th width="33%" class="lessons">
+      &nbsp;»ÕÀ »Ê«”ÿ…:</th>
+      <th width="34%" class="lessons">
+      &nbsp;»ÕÀ ›Ì «·ﬁ”„:</th>
+    </tr>
+    <tr>
+      <td class="lessons" width="33%" style="text-align: center;">
+      <input Class="Text" id="SearchWord" type="text" name="Word" size="28" /></td>
+      <td class="lessons" width="33%">
+      <table cellspacing="0" width="100%">
+        <tr>
+          <td width="33%">&nbsp;<input type="radio" value="lesstitle" checked="checked" name="Find" id="fp2" /><label for="fp2">
+          ⁄‰Ê«‰ «·œ—”.</label></td>
+          <td width="33%">&nbsp;<input type="radio" name="Find" value="less" id="fp1" /><label for="fp1">«·œ—”.</label></td>
+          <td width="34%">&nbsp;<input type="radio" name="Find" value="Writer" id="fp0" /><label for="fp0">ﬂ« » «·œ—”.</label></td>
+        </tr>
+      </table>
+      </td>
+      <td class="lessons" width='34%'>&nbsp;<select class="Text" size="1" name="Cat">
+      <optgroup label="Õœœ «·ﬁ”„ «·–Ì   —Ìœ «·»ÕÀ ›ÌÂ">
+      <option selected="selected" value="0">ªª ﬂ‹‹«›… «·√ﬁ”‹‹«„ ´´</option>
+      <IF Name="{ncat}">
+      <LOOP Name="{cats}">
+      <option value="{{id}}">ª {{Title}}</option>
+      </LOOP>
+      </IF>
+      </optgroup>
+            </select></td>
+	      </tr>
+	    </table>
+	    <table  cellspacing="0" class="lessons" width='100%'>
+	      <tr>
+	        <th class="lessons" width='33%'>&nbsp; — Ì»
+	        «·‰ «∆Ã Õ”»:</th>
+	        <th class="lessons" width='33%'>&nbsp;ÿ—Ìﬁ…
+	         — Ì» «·‰ «∆Ã:</th>
+            <IF Name="{Captcha.2}">
+	        <th class="lessons" width='34%'>&nbsp;’Ê—… «· Õﬁﬁ
+	        :</th>
+            </IF>
+	      </tr>
+	      <tr STYLE='FONT: 9pt'>
+	        <td class="lessons" width='33%'>
+	        <table border='0' cellpadding='0' cellspacing='0' width='100%'>
+	          <tr>
+	            <td width='25%'>
+	            <input type='radio' name='Order' value='Relevance' checked="checked" id="fp8"><label for="fp8">
+	            «·«ﬁ—» ·ﬂ·„… «·»ÕÀ.</label></td>
+	            <td width='25%'>
+	            <input type='radio' name='Order' value='lessid' id="fp5"><label for="fp5">
+	            «· «—ÌŒ.</label></td>
+	            <td width='25%'>&nbsp;<input type='radio' name='Order' value='lesstitle' id="fp4"><label for="fp4">
+	            ⁄‰Ê«‰ «·œ—”.</label></td>
+	            <td width='25%'>&nbsp;<input type='radio' name='Order' value='View' id="fp3"><label for="fp3">
+	            ⁄œœ «·„‘«Âœ« .</label></td>
+	          </tr>
+	        </table>
+	        </td>
+	        <td class="lessons" width='33%'>
+	        <table STYLE='FONT: 9pt' border='0' cellpadding='0' cellspacing='0' width='100%'>
+	          <tr>
+	            <td width='50%'>&nbsp;<input type='radio' name='Dir' value='DESC' checked="checked" id="fp6"><label for="fp6">„‰
+	            «·ÃœÌœ ≈·Ï «·ﬁœÌ„.</label></td>
+	            <td width='50%'>&nbsp;<input type='radio' name='Dir' value='ASC' id="fp7"><label for="fp7">
+	            „‰ «·ﬁœÌ„ ≈·Ï «·ÃœÌœ.</label></td>
+	          </tr>
+	        </table>
+	        </td>
+            <IF Name="{Captcha.2}">
+	        <td class="lessons" width='34%'>
+	            <img src="captcha.php" border="1" width="100"  style="vertical-align: middle;" height="40" alt="Ì—ÃÏ ﬂ «»… «·√—ﬁ«„ «· Ì  —«Â«" />&nbsp;
+                <input class="Text" type="text" name="security" maxlength="4" dir="ltr" size="10" />
+	        </td>
+            </IF>
+	      </tr>
+	    </table>
+	    <p align='center'>
+	    <input class="Button" type='submit' value='»‹‹Õ‹‹À' name='Search'></p>
+</form>

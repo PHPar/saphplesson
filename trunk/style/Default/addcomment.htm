@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+
+<head>
+<meta content="text/html; charset=windows-1256" http-equiv="Content-Type" />
+<meta content="ar-sa" http-equiv="Content-Language" />
+<title>إضافة تعليق - {settings.sitetitle}</title>
+<link href="style/Default/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function CheckComment(formobj)
+{
+var fieldRequired = Array("CName", "CMail", "Commnt");
+var fieldDescription = Array("الاســـم", "البــريــد الإلكتروني", "التــعليــق");
+var alertMsg = "الرجاء اكمال الحقول التالية:\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+</script>
+</head>
+<body style="background:#F4F7FB;">
+
+<table Class="lessons" height="100%" cellSpacing="0" width="100%">
+  <tr>
+    <th Class="lessons" style="text-align: right;" width="100%">
+    إضافة تعليق</th>
+  </tr>
+<tr><td Class="lessons">
+<form name="newcom" onsubmit="return CheckComment(this);" method="POST"  enctype="multipart/form-data" action="options.php?action=addcomment&L={L}&LCat={LCat}">
+  <table Class="lessons" cellSpacing="0" width="100%">
+    <tr>
+      <td Class="lessons" width="50%">إضافة تعليق للدرس:</td>
+      <td Class="lessons" width="50%">{LsnTitle}</td>
+    </tr>
+<tr>
+    <td Class="lessons" width="50%" >
+    الاسم: </td>
+    <td Class="lessons" width="50%" >
+        <input type="text" name="CName" size="30">
+    </td>
+</tr>
+<tr>
+    <td Class="lessons" width="50%" >
+    البريد الإلكتروني:</td>
+    <td Class="lessons" width="50%" >
+        <input type="text" name="CMail" size="30" dir="ltr">
+    </td>
+</tr>
+<IF Name="{Captcha.1}">
+<tr>
+    <td Class="lessons" width="50%" >
+    صورة التحقق:</td>
+    <td Class="lessons" width="50%" >
+        <img src="captcha.php" border="1" width="100"  style="vertical-align: middle;" height="40" alt="يرجى كتابة الأرقام التي تراها" />&nbsp;
+        <input class="Text" type="text" name="security" maxlength="4" dir="ltr" size="10" />
+    </td>
+</tr>
+</IF>
+<tr>
+    <td Class="lessons" width="50%" >
+    التعليق:</td>
+    <td Class="lessons" width="50%" >
+        <textarea rows="4" name="Commnt" cols="36" class="Text"></textarea>
+    </td>
+</tr>
+</table>
+  <center>
+  <p>
+  <input class="Button" type="submit" value="إضافة التعليق" name="addcomment">
+  &nbsp;
+  <input class="Button" type="button" value="إغلاق النافذة" name="Cancel" onClick="window.close()"></p>
+  </center>
+</form>
+</td></tr></table>
+</body>
+</html>

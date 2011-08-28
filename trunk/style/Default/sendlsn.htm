@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+
+<head>
+<meta content="text/html; charset=windows-1256" http-equiv="Content-Type" />
+<meta content="ar-sa" http-equiv="Content-Language" />
+<title>ارسال الدرس لصديق - {settings.sitetitle}</title>
+<link href="style/Default/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+function CheckForm(formobj)
+{
+var fieldRequired = Array("ReceiverEmail", "SenderEmail", "Subject","Message");
+var fieldDescription = Array("بريد صديقك", "بريدك الإلكتروني", "عنوان الرسالة","محتوى الرسالة");
+var alertMsg = "الرجاء اكمال الحقول التالية:\n";
+
+	var l_Msg = alertMsg.length;
+
+	for (var i = 0; i < fieldRequired.length; i++){
+		var obj = formobj.elements[fieldRequired[i]];
+		if (obj){
+			switch(obj.type){
+			case "select-one":
+				if (obj.selectedIndex == -1 || obj.options[obj.selectedIndex].text == ""){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "select-multiple":
+				if (obj.selectedIndex == -1){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			case "text":
+			case "textarea":
+				if (obj.value == "" || obj.value == null){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+				break;
+			default:
+			}
+			if (obj.type == undefined){
+				var blnchecked = false;
+				for (var j = 0; j < obj.length; j++){
+					if (obj[j].checked){
+						blnchecked = true;
+					}
+				}
+				if (!blnchecked){
+					alertMsg += " - " + fieldDescription[i] + "\n";
+				}
+			}
+		}
+	}
+
+	if (alertMsg.length == l_Msg){
+		return true;
+	}else{
+		alert(alertMsg);
+		return false;
+	}
+}
+</script>
+</head>
+<body style="background:#F4F7FB;">
+
+<table Class="lessons" height="100%" cellSpacing="0" width="100%">
+  <tr>
+    <th Class="lessons" style="text-align: right;" width="100%">
+    ارسل الدرس لصديق</th>
+  </tr>
+  <tr>
+    <td Class="lessons">
+        <form name='sendpage' method='post' onsubmit="return CheckForm(this);" action='options.php?action=sendlsn&L={id}'>
+            <table dir='ltr' class="lessons" cellspacing="0" width='100%'>
+                <tr>
+                    <td class="lessons" style="text-align: right;" height="20" width="45%">
+                        <input type="text" name='ReceiverEmail' size="20" maxlength="40" dir='ltr'>
+                    </td>
+                    <td class="lessons" height="20" width="55%">
+                        :بريد صديقك
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lessons" style="text-align: right;" height="20" width="45%">
+                        <input type=text name='SenderEmail'  size="20" maxlength="40" dir='ltr'>
+                    </td>
+                    <td class="lessons" height="20" width="55%">
+                        :بريدك الإلكتروني
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lessons" style="text-align: right;" height="20" width="45%">
+                        <input type=text name='Subject' size="20" maxlength="40" dir='rtl'>
+                    </td>
+                    <td class="lessons" height="20" width="55%">
+                        : عنوان الرسالة
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lessons" style="text-align: right;" height="20" width="45%">
+                        <textarea name='Message' wrap="on" cols="25" rows="5" dir='rtl'></textarea>
+                    </td>
+                    <td class="lessons" height="20" width="55%">
+                        : الرسالة
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lessons" dir="rtl" height="20" width="45%">
+                        <input id="SaphpCHeck" type="checkbox" name='SendCopy' value="1" dir='rtl'><label for="SaphpCHeck"> إرسال نسخة إلى بريدك</label>
+                    </td>
+                    <td class="lessons" height="20" width="55%">&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td class="lessons" style="text-align: center;" colspan="2" height="20">
+                        <input class="Button" type="button" value='&nbsp;إغلاق النافذة&nbsp;' name='Cancel' id='Cancel' onclick='window.close()'>
+                        &nbsp;<input class="Button" type="submit" value='&nbsp;ارسال الدرس&nbsp;' name='Send' id='Send' >
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

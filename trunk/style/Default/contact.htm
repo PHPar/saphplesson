@@ -1,0 +1,50 @@
+<a href="{settings.SiteLink}">{settings.sitetitle}</a>&nbsp;&raquo;&nbsp;« ’· »‰«
+<br /><br />
+<form method="POST" action="misc.php?action=contact" onsubmit="return CheckField(this);">
+    <table width="100%" align="center" cellspacing="0" class="lessons">
+        <tr>
+            <th width="18%" class="lessons">
+            «·«”„ :</th>
+            <td class="lessons" width="82%">
+            <input type="text" name="Name" size="35" class="Text"></td>
+        </tr>
+        <tr>
+            <th width="18%" class="lessons">
+            «·»—Ìœ :</th>
+            <td class="lessons" width="82%">
+            <input type="text" name="Email" size="35" class="Text"></td>
+        </tr>
+        <tr>
+            <th width="18%" class="lessons">
+            «·„Ê÷Ê⁄ :</th>
+            <td class="lessons" width="82%">
+            <select size="1" name="Subject" class="Text">
+                <option>«” ›”«—</option>
+                <option>«ﬁ —«Õ</option>
+                <option>‘ﬂÊÏ</option>
+                <option>‘ﬂ—</option>
+            </select></td>
+        </tr>
+        <IF Name="{Captcha.4}">
+        <tr>
+            <th width="18%" class="lessons">
+            ’Ê—… «· Õﬁﬁ :</th>
+            <td class="lessons" width="82%">
+            <img src="captcha.php" border="1" width="100"  style="vertical-align: middle;" height="40" alt="Ì—ÃÏ ﬂ «»… «·√—ﬁ«„ «· Ì  —«Â«" />&nbsp;
+            <input class="Text" type="text" name="security" maxlength="4" dir="ltr" size="10" /></td>
+        </tr>
+        </IF>
+        <tr>
+            <th colspan="2" width="100%" class="lessons">
+            «·—”«·…:</th>
+        </tr>
+        <tr>
+            <td colspan="2" class="lessons" width="100%" style="text-align: center">
+            <textarea rows="10" name="Msg" cols="45" class="Text"></textarea></td>
+        </tr>
+    </table>
+    <br />
+  <div style="text-align: center">
+    <input type="submit" value="«—”«· «·—”«·…" name="Send" Class="Button">
+  </div>
+</form>
